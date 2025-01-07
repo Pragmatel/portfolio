@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Etienne Barberi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 5px 0 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .project-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-gallery img:hover {
+            transform: scale(2.0);
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Etienne Barberi</h1>
+        <p>Étudiant en Bachelor Informatique | Auto-entrepreneur et patron de TechLink Solutions</p>
+    </header>
+
+    <main>
+        <section id="profil">
+            <h2>Profil</h2>
+            <div class="card">
+                <p>Actuellement en deuxième année de Bachelor Informatique, je possède des compétences variées dans les domaines de la programmation, de la sécurité informatique, et du développement web. En parallèle, je suis auto-entrepreneur et dirigeant de TechLink Solutions, une entreprise spécialisée en solutions technologiques.</p>
+            </div>
+        </section>
+
+        <section id="competences">
+            <h2>Compétences</h2>
+            <div class="card">
+                <ul>
+                    <li><strong>Langages de programmation :</strong> Python, SQL, C, C++, JavaScript, PHP</li>
+                    <li><strong>Sécurité informatique :</strong> Connaissances en cybersécurité, bonnes pratiques contre le piratage</li>
+                    <li><strong>Systèmes d'exploitation :</strong> Linux, Windows (Création de VM)</li>
+                    <li><strong>Bases de données :</strong> SQL Server Management Studio, MySQL</li>
+                    <li><strong>Développement web :</strong> HTML, CSS, Symfony, Twig, Doctrine</li>
+                    <li><strong>Réseaux :</strong> Cisco CCNAv7</li>
+                    <li><strong>Gestion de contenu :</strong> WordPress, Xampp, Apache, Nginx</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projets">
+            <h2>Projets</h2>
+            <div class="card project-gallery">
+                <img src="projet1.png" alt="Capture d'écran du projet 1">
+                <img src="projet2.png" alt="Capture d'écran du projet 2">
+                <img src="projet3.png" alt="Capture d'écran du projet 3">
+                <img src="projet4.png" alt="Capture d'écran du projet 4">
+            </div>
+        </section>
+
+        <section id="formation">
+            <h2>Formation</h2>
+            <div class="card">
+                <p><strong>Bachelor Informatique</strong> (2022 - 2026) - Open IT, Clermont-Ferrand</p>
+                <p><strong>Bac Pro Assistant Architecte</strong> (2019 - 2022, Mention Bien) - Pierre Joel Bonté, Riom</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Expériences Professionnelles</h2>
+            <div class="card">
+                <p><strong>Chef de projet autonome</strong> (Juin 2023 - Juillet 2023) - Lyon</p>
+                <ul>
+                    <li>Utilisation de l'outil Notion</li>
+                    <li>Création de calendriers événementiels</li>
+                </ul>
+
+                <p><strong>Assistant opérationnel polyvalent</strong> (Septembre 2023 - Novembre 2023) - Al & Co, Saint-Ours-les-Roches</p>
+
+                <p><strong>Assistant Architecte</strong> (Février 2022 - Avril 2022) - Lezoux</p>
+                <ul>
+                    <li>Utilisation de logiciels : AutoCad, Revit, Bim Vision</li>
+                </ul>
+
+                <p><strong>Responsable de l'accueil et du service</strong> (Février 2024 - Mars 2024) - Bistrot Régent, Aubière</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="card">
+                <p>Email : <a href="mailto:etiennebarberi@gmail.com">etiennebarberi@gmail.com</a></p>
+                <p>Téléphone : 0628474538</p>
+                <p>LinkedIn : <a href="https://linkedin.com/in/etiennebarberi">Etienne Barberi</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Etienne Barberi - Tous droits réservés</p>
+    </footer>
+</body>
+</html>
