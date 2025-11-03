@@ -1,272 +1,249 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Portfolio - Etienne Barberi</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        header {
-            background-color: #0056b3;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        header p {
-            margin: 5px 0 0;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        section h2 {
-            color: #0056b3;
-            border-bottom: 2px solid #0056b3;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            padding: 5px 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-        }
-
-        a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .project-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .project-gallery img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-gallery img:hover {
-            cursor: pointer;
-            transform: scale(1.05);
-        }
-
-        .image-container {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .icon-overlay {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 16px;
-            transition: background 0.2s ease;
-        }
-        
-        .icon-overlay:hover {
-            background: rgba(0, 0, 0, 0.8);
-            cursor: pointer;
-        }        
-
-        /* Plein écran */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-        }
-
-        .lightbox.show {
-            display: flex;
-        }
+        :root{--primary:#0056b3;--bg:#f4f4f9;--text:#333;}
+        *{box-sizing:border-box}
+        body{font-family:'Poppins',sans-serif;margin:0;padding:0;background:var(--bg);color:var(--text)}
+        header{background:var(--primary);color:#fff;padding:28px 20px;text-align:center}
+        header h1{margin:0;font-size:2.6rem;letter-spacing:.5px}
+        header p{margin:8px 0 0;opacity:.95}
+        main{padding:22px}
+        section{margin-bottom:40px}
+        section h2{color:var(--primary);border-bottom:2px solid var(--primary);display:inline-block;margin-bottom:12px}
+        .card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:20px;margin-bottom:18px}
+        ul{list-style:none;padding:0;margin:0}
+        ul li{padding:6px 0}
+        footer{text-align:center;padding:14px;background:#333;color:#fff}
+        a{color:var(--primary);text-decoration:none}
+        a:hover{text-decoration:underline}
+        .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+        .tag{display:inline-block;background:#eef5ff;border:1px solid #cfe0ff;color:#1e3a8a;padding:4px 10px;border-radius:999px;font-size:.9rem;margin:4px 6px 0 0}
+        .project-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+        .project-gallery img{width:100%;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,.1);transition:transform .2s ease}
+        .project-gallery img:hover{cursor:pointer;transform:scale(1.05)}
+        .image-container{position:relative;display:inline-block}
+        .icon-overlay{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.6);border-radius:50%;width:30px;height:30px;display:flex;justify-content:center;align-items:center;color:#fff;font-size:16px;transition:background .2s ease}
+        .icon-overlay:hover{background:rgba(0,0,0,.8);cursor:pointer}
+        .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);justify-content:center;align-items:center;z-index:1000}
+        .lightbox img{max-width:90%;max-height:90%;border-radius:10px}
+        .lightbox.show{display:flex}
+        .muted{opacity:.8}
     </style>
 </head>
 <body>
     <header>
         <h1>Etienne Barberi</h1>
-        <p>Étudiant en Bachelor Informatique | Auto-entrepreneur au nom de TechLink Solutions</p>
+        <p>Bachelor Informatique (3<sup>e</sup> année) – Keyce, Montpellier • Développeur full-stack & mobile :contentReference[oaicite:0]{index=0}</p>
     </header>
 
     <main>
+        <!-- PROFIL -->
         <section id="profil">
             <h2>Profil</h2>
             <div class="card">
-                <p>Actuellement en Troisième année de Bachelor Informatique, je possède des compétences variées dans les domaines de la programmation, de la sécurité informatique, et du développement web. En parallèle, je suis auto-entrepreneur et dirigeant de TechLink Solutions, une entreprise spécialisée en solutions technologiques.</p>
+                <p>Actuellement en troisième année de Bachelor Informatique, je conçois des applications web et mobiles
+                et j’aime optimiser les flux de données (modélisation, normalisation) ainsi que la qualité logicielle.
+                Je travaille sur des projets personnels concrets (site & app) et j’affine mes compétences en
+                frameworks PHP/JS ainsi qu’en Python data. :contentReference[oaicite:1]{index=1}</p>
             </div>
         </section>
 
+        <!-- COMPÉTENCES -->
         <section id="competences">
             <h2>Compétences</h2>
             <div class="card">
-                <ul>
-                    <li><strong>Langages de programmation :</strong> Python, SQL, C, C++, JavaScript, PHP, Dart / Flutter</li>
-                    <li><strong>Sécurité informatique :</strong> Connaissances en cybersécurité, bonnes pratiques contre le piratage</li>
-                    <li><strong>Systèmes d'exploitation :</strong> Linux, Windows, Création de VM, Docker</li>
-                    <li><strong>Bases de données :</strong> SQL Server Management Studio, MySQL, PhpMyAdmin</li>
-                    <li><strong>Développement web :</strong> HTML, CSS, Symfony, Twig, Doctrine</li>
-                    <li><strong>Réseaux :</strong> Cisco CCNAv7</li>
-                    <li><strong>Gestion de contenu :</strong> WordPress, Xampp, Apache, Nginx</li>
-                </ul>
+                <div class="grid-2">
+                    <div>
+                        <h3>Langages & Frameworks</h3>
+                        <p>
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">C</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">Dart / Flutter</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Twig</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Symfony</span>
+                            <span class="tag">Doctrine</span>
+                        </p>
+                        <p class="muted">Conception d’algorithmes (pré-codage), modélisation entité-relation. :contentReference[oaicite:2]{index=2}</p>
+                    </div>
+                    <div>
+                        <h3>Environnements & Outils</h3>
+                        <ul>
+                            <li><strong>Systèmes</strong> : Linux, Windows (création de VM). :contentReference[oaicite:3]{index=3}</li>
+                            <li><strong>Bases de données</strong> : Microsoft SQL Server (SSMS), MySQL, PhpMyAdmin. :contentReference[oaicite:4]{index=4}</li>
+                            <li><strong>Serveurs & CMS</strong> : WordPress, Xampp, Apache, Nginx. :contentReference[oaicite:5]{index=5}</li>
+                            <li><strong>Réseaux</strong> : Cisco (CCNAv7 obtenu). :contentReference[oaicite:6]{index=6}</li>
+                            <li><strong>Data/Office</strong> : Tableaux croisés dynamiques (Excel). :contentReference[oaicite:7]{index=7}</li>
+                            <li><strong>Matériel</strong> : Montage, branchement et installation de PC. :contentReference[oaicite:8]{index=8}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- PROJETS -->
         <section id="projets">
             <h2>Projets</h2>
+
+            <div class="card">
+                <h3>WakeOnStop – Application mobile</h3>
+                <p class="muted">sept. 2025 → actuel :contentReference[oaicite:9]{index=9}</p>
+                <ul>
+                    <li>App mobile développée en Dart/Flutter (tests sur VM Android). :contentReference[oaicite:10]{index=10}</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3><a href="https://wakeonstop.com" target="_blank" rel="noopener">wakeonstop.com</a> – Site web</h3>
+                <p class="muted">juil. 2025 → août 2025 :contentReference[oaicite:11]{index=11}</p>
+                <ul>
+                    <li>Site officiel permettant de télécharger l’application et recueillir les retours. :contentReference[oaicite:12]{index=12}</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>IA prédictive – Normalisation/Dénormalisation</h3>
+                <ul>
+                    <li>Développement Python relié à une base CSV pour préparer des données d’IA prédictive de consommation énergétique. :contentReference[oaicite:13]{index=13}</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>WebApp Symfony – Jeu du Loup-Garou</h3>
+                <p class="muted">févr. 2022 → avr. 2022 :contentReference[oaicite:14]{index=14}</p>
+                <ul>
+                    <li>Application web réalisée avec Symfony, PHP et Doctrine. :contentReference[oaicite:15]{index=15}</li>
+                </ul>
+            </div>
+
             <div class="card project-gallery">
                 <div class="image-container">
-                    <img src="assets/projet1.PNG" alt="Capture d'écran du projet 1">
+                    <img src="assets/projet1.PNG" alt="Capture d'écran du projet WakeOnStop">
                     <div class="icon-overlay"><i class="fas fa-search-plus"></i></div>
                 </div>
                 <div class="image-container">
-                    <img src="assets/projet2.PNG" alt="Capture d'écran du projet 2">
+                    <img src="assets/projet2.PNG" alt="Capture d'écran du site wakeonstop.com">
                     <div class="icon-overlay"><i class="fas fa-search-plus"></i></div>
                 </div>
                 <div class="image-container">
-                    <img src="assets/projet3.PNG" alt="Capture d'écran du projet 3">
+                    <img src="assets/projet3.PNG" alt="Capture d'écran du projet IA (préparation de données)">
                     <div class="icon-overlay"><i class="fas fa-search-plus"></i></div>
                 </div>
                 <div class="image-container">
-                    <img src="assets/projet4.PNG" alt="Capture d'écran du projet 4">
+                    <img src="assets/projet4.PNG" alt="Capture d'écran de la WebApp Symfony Loup-Garou">
                     <div class="icon-overlay"><i class="fas fa-search-plus"></i></div>
                 </div>
             </div>
         </section>
 
+        <!-- FORMATION -->
         <section id="formation">
             <h2>Formation</h2>
             <div class="card">
-                <p><strong>Bachelor Informatique</strong> (2022 - 2026) - Keyce, Montpellier</p>
-                <p><strong>Bac Pro Assistant Architecte</strong> (2019 - 2022, Mention Bien) - Pierre Joel Bonté, Riom</p>
+                <p><strong>Bachelor Informatique</strong> (en cours) — Keyce Informatique, Montpellier. :contentReference[oaicite:16]{index=16}</p>
+                <p><strong>Bac Pro Assistant Architecte</strong> (2019–2022, mention) — Lycée Pierre Joël Bonté, Riom. :contentReference[oaicite:17]{index=17}</p>
             </div>
         </section>
 
+        <!-- EXPÉRIENCES (optionnel) -->
         <section id="experience">
-            <h2>Expériences Professionnelles</h2>
+            <h2>Expériences professionnelles</h2>
             <div class="card">
-                <p><strong>Chef de projet autonome</strong> (Juin 2023 - Juillet 2023) - Lyon</p>
+                <p class="muted">Sélection (voir CV détaillé si besoin).</p>
                 <ul>
-                    <li>Utilisation de l'outil Notion</li>
-                    <li>Création de calendriers événementiels</li>
+                    <li><strong>Chef de projet autonome</strong> — Lyon (juin–juil. 2023)</li>
+                    <li><strong>Assistant opérationnel polyvalent</strong> — AL &amp; Co (sept.–nov. 2023)</li>
+                    <li><strong>Assistant Architecte</strong> — Lezoux (févr.–avr. 2022)</li>
+                    <li><strong>Responsable accueil &amp; service</strong> — Bistrot Régent (févr.–mars 2024)</li>
                 </ul>
-
-                <p><strong>Assistant opérationnel polyvalent</strong> (Septembre 2023 - Novembre 2023) - Al & Co, Saint-Ours-les-Roches</p>
-
-                <p><strong>Assistant Architecte</strong> (Février 2022 - Avril 2022) - Lezoux</p>
-                <ul>
-                    <li>Utilisation de logiciels : AutoCad, Revit, Bim Vision</li>
-                </ul>
-
-                <p><strong>Responsable de l'accueil et du service</strong> (Février 2024 - Mars 2024) - Bistrot Régent, Aubière</p>
             </div>
         </section>
 
+        <!-- LANGUES / QUALITÉS / INTÉRÊTS -->
+        <section id="plus">
+            <h2>Langues, Qualités & Centres d’intérêt</h2>
+            <div class="card grid-2">
+                <div>
+                    <h3>Langues</h3>
+                    <ul>
+                        <li>Anglais : B2</li>
+                        <li>Français : Langue maternelle</li>
+                    </ul>
+                    <p class="muted">:contentReference[oaicite:18]{index=18}</p>
+                </div>
+                <div>
+                    <h3>Qualités</h3>
+                    <p>
+                        <span class="tag">Persévérance</span>
+                        <span class="tag">Assiduité</span>
+                        <span class="tag">Dynamisme</span>
+                        <span class="tag">Sens de l’initiative</span>
+                        <span class="tag">Autonomie</span>
+                        <span class="tag">Curiosité</span>
+                        <span class="tag">Bon relationnel</span>
+                        <span class="tag">IA : prompting / optimisation</span>
+                    </p>
+                    <p class="muted">:contentReference[oaicite:19]{index=19}</p>
+                </div>
+                <div>
+                    <h3>Centres d’intérêt</h3>
+                    <p><span class="tag">Informatique</span> <span class="tag">Musique</span> <span class="tag">Sciences</span></p>
+                    <p class="muted">:contentReference[oaicite:20]{index=20}</p>
+                </div>
+                <div>
+                    <h3>Portfolio</h3>
+                    <p><a href="https://pragmatel.github.io/portfolio/" target="_blank" rel="noopener">pragmatel.github.io/portfolio</a> :contentReference[oaicite:21]{index=21}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
         <section id="contact">
             <h2>Contact</h2>
             <div class="card">
                 <p>Email : <a href="mailto:etienne.barberi@e-cdp.com">etienne.barberi@e-cdp.com</a></p>
-                <p>LinkedIn : <a href="https://linkedin.com/in/etiennebarberi">Etienne Barberi</a></p>
+                <p>Téléphone : <a href="tel:+33628474538">06 28 47 45 38</a> :contentReference[oaicite:22]{index=22}</p>
+                <p>LinkedIn : <a href="https://linkedin.com/in/etiennebarberi" target="_blank" rel="noopener">Etienne Barberi</a></p>
             </div>
         </section>
     </main>
+
     <div class="lightbox" id="lightbox">
         <img src="" alt="Image agrandie">
     </div>
 
     <footer>
-        <p>© 2025 Etienne Barberi - Tous droits réservés</p>
+        <p>© 2025 Etienne Barberi — Tous droits réservés</p>
     </footer>
+
     <script>
-        const images = document.querySelectorAll('.project-gallery img');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = lightbox.querySelector('img');
-
-        images.forEach(image => {
-            image.addEventListener('click', () => {
-                lightboxImg.src = image.src;
-                lightbox.classList.add('show');
-            });
-        });
-
-        const icons = document.querySelectorAll('.icon-overlay');
-        icons.forEach(icon => {
-            icon.addEventListener('click', (e) => {
+        const images=document.querySelectorAll('.project-gallery img');
+        const lightbox=document.getElementById('lightbox');
+        const lightboxImg=lightbox.querySelector('img');
+        images.forEach(img=>img.addEventListener('click',()=>{lightboxImg.src=img.src;lightbox.classList.add('show')}))
+        document.querySelectorAll('.icon-overlay').forEach(icon=>{
+            icon.addEventListener('click',e=>{
                 e.stopPropagation();
-                const img = icon.previousElementSibling;
-                lightboxImg.src = img.src;
-                lightbox.classList.add('show');
+                const img=icon.previousElementSibling;
+                lightboxImg.src=img.src;lightbox.classList.add('show');
             });
         });
-
-        lightbox.addEventListener('click', () => {
-            lightbox.classList.remove('show');
-        });
+        lightbox.addEventListener('click',()=>lightbox.classList.remove('show'));
     </script>
 </body>
 </html>
